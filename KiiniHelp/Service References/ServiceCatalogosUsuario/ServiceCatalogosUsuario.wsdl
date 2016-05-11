@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceCatalogosUsuario" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Sistema" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Operacion" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Nodos" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones.Domicilio" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Operacion.Usuarios" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Parametros" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Operacion" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Mascaras" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Helper" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/KinniNet.Business.Utils" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerTipoSubGrupos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoSubGrupos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerTipoSubGrupos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoSubGruposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerGruposUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerGruposUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerGruposUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerGruposUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSubGruposUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubGruposUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSubGruposUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubGruposUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerPais_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPais" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerPais_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerCampus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCampus" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerCampus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCampusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerTorres_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTorres" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerTorres_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTorresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerPisos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPisos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerPisos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPisosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerZonas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerZonas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerZonas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerZonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSubZonas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubZonas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSubZonas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubZonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSiteRacks_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSiteRacks" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSiteRacks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSiteRacksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerHoldings_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerHoldings" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerHoldings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerHoldingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerCompañias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCompañias" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerCompañias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCompañiasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerDirecciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDirecciones" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerDirecciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDireccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSubDirecciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubDirecciones" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSubDirecciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubDireccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerGerencias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerGerencias" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerGerencias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerGerenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSubGerencias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubGerencias" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSubGerencias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubGerenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerJefaturas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerJefaturas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerJefaturas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerJefaturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarUbicacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarUbicacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarUbicacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarUbicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarOrganizacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarOrganizacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarOrganizacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarOrganizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarHolding_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarHolding" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarHolding_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarHoldingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarCompania_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarCompania" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarCompania_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarCompaniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarDireccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarDireccion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarDireccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarDireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarSubDireccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSubDireccion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarSubDireccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSubDireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarGerencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarGerencia" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarGerencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarGerenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarSubGerencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSubGerencia" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarSubGerencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSubGerenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarJefatura_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarJefatura" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarJefatura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarJefaturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarGrupoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarGrupoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarGrupoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarGrupoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerGrupoUsuarioById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerGrupoUsuarioById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerGrupoUsuarioById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerGrupoUsuarioByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSubGrupoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubGrupoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSubGrupoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubGrupoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel1_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel1" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel1Response" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel2" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel2Response" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel3_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel3" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel3Response" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel4_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel4" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel4_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel4Response" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel5_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel5" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel5_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel5Response" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel6_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel6" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel6_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel6Response" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel7_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel7" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerNivel7_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNivel7Response" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_EsNodoTerminal_InputMessage">
+    <wsdl:part name="parameters" element="tns:EsNodoTerminal" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_EsNodoTerminal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EsNodoTerminalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarArbol_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarArbol" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarArbol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarArbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerInformacionConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerInformacionConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerInformacionConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerInformacionConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarInformacionConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarInformacionConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarInformacionConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarInformacionConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSla_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerSla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSlaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarSla_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarSla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSlaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerEncuestas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEncuestas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_ObtenerEncuestas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEncuestasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarEncuesta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarEncuesta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosUsuario_GuardarEncuesta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarEncuestaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceCatalogosUsuario">
+    <wsdl:operation name="ObtenerTipoSubGrupos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerTipoSubGrupos" message="tns:IServiceCatalogosUsuario_ObtenerTipoSubGrupos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerTipoSubGruposResponse" message="tns:IServiceCatalogosUsuario_ObtenerTipoSubGrupos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerGruposUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerGruposUsuario" message="tns:IServiceCatalogosUsuario_ObtenerGruposUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerGruposUsuarioResponse" message="tns:IServiceCatalogosUsuario_ObtenerGruposUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubGruposUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubGruposUsuario" message="tns:IServiceCatalogosUsuario_ObtenerSubGruposUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubGruposUsuarioResponse" message="tns:IServiceCatalogosUsuario_ObtenerSubGruposUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPais">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerPais" message="tns:IServiceCatalogosUsuario_ObtenerPais_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerPaisResponse" message="tns:IServiceCatalogosUsuario_ObtenerPais_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCampus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerCampus" message="tns:IServiceCatalogosUsuario_ObtenerCampus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerCampusResponse" message="tns:IServiceCatalogosUsuario_ObtenerCampus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTorres">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerTorres" message="tns:IServiceCatalogosUsuario_ObtenerTorres_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerTorresResponse" message="tns:IServiceCatalogosUsuario_ObtenerTorres_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPisos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerPisos" message="tns:IServiceCatalogosUsuario_ObtenerPisos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerPisosResponse" message="tns:IServiceCatalogosUsuario_ObtenerPisos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerZonas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerZonas" message="tns:IServiceCatalogosUsuario_ObtenerZonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerZonasResponse" message="tns:IServiceCatalogosUsuario_ObtenerZonas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubZonas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubZonas" message="tns:IServiceCatalogosUsuario_ObtenerSubZonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubZonasResponse" message="tns:IServiceCatalogosUsuario_ObtenerSubZonas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSiteRacks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSiteRacks" message="tns:IServiceCatalogosUsuario_ObtenerSiteRacks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSiteRacksResponse" message="tns:IServiceCatalogosUsuario_ObtenerSiteRacks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerHoldings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerHoldings" message="tns:IServiceCatalogosUsuario_ObtenerHoldings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerHoldingsResponse" message="tns:IServiceCatalogosUsuario_ObtenerHoldings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCompañias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerCompañias" message="tns:IServiceCatalogosUsuario_ObtenerCompañias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerCompañiasResponse" message="tns:IServiceCatalogosUsuario_ObtenerCompañias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDirecciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerDirecciones" message="tns:IServiceCatalogosUsuario_ObtenerDirecciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerDireccionesResponse" message="tns:IServiceCatalogosUsuario_ObtenerDirecciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubDirecciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubDirecciones" message="tns:IServiceCatalogosUsuario_ObtenerSubDirecciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubDireccionesResponse" message="tns:IServiceCatalogosUsuario_ObtenerSubDirecciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerGerencias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerGerencias" message="tns:IServiceCatalogosUsuario_ObtenerGerencias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerGerenciasResponse" message="tns:IServiceCatalogosUsuario_ObtenerGerencias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubGerencias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubGerencias" message="tns:IServiceCatalogosUsuario_ObtenerSubGerencias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubGerenciasResponse" message="tns:IServiceCatalogosUsuario_ObtenerSubGerencias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerJefaturas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerJefaturas" message="tns:IServiceCatalogosUsuario_ObtenerJefaturas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerJefaturasResponse" message="tns:IServiceCatalogosUsuario_ObtenerJefaturas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarUbicacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarUbicacion" message="tns:IServiceCatalogosUsuario_GuardarUbicacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarUbicacionResponse" message="tns:IServiceCatalogosUsuario_GuardarUbicacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarOrganizacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarOrganizacion" message="tns:IServiceCatalogosUsuario_GuardarOrganizacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarOrganizacionResponse" message="tns:IServiceCatalogosUsuario_GuardarOrganizacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarHolding">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarHolding" message="tns:IServiceCatalogosUsuario_GuardarHolding_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarHoldingResponse" message="tns:IServiceCatalogosUsuario_GuardarHolding_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCompania">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarCompania" message="tns:IServiceCatalogosUsuario_GuardarCompania_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarCompaniaResponse" message="tns:IServiceCatalogosUsuario_GuardarCompania_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarDireccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarDireccion" message="tns:IServiceCatalogosUsuario_GuardarDireccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarDireccionResponse" message="tns:IServiceCatalogosUsuario_GuardarDireccion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSubDireccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarSubDireccion" message="tns:IServiceCatalogosUsuario_GuardarSubDireccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarSubDireccionResponse" message="tns:IServiceCatalogosUsuario_GuardarSubDireccion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarGerencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarGerencia" message="tns:IServiceCatalogosUsuario_GuardarGerencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarGerenciaResponse" message="tns:IServiceCatalogosUsuario_GuardarGerencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSubGerencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarSubGerencia" message="tns:IServiceCatalogosUsuario_GuardarSubGerencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarSubGerenciaResponse" message="tns:IServiceCatalogosUsuario_GuardarSubGerencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarJefatura">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarJefatura" message="tns:IServiceCatalogosUsuario_GuardarJefatura_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarJefaturaResponse" message="tns:IServiceCatalogosUsuario_GuardarJefatura_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarGrupoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarGrupoUsuario" message="tns:IServiceCatalogosUsuario_GuardarGrupoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarGrupoUsuarioResponse" message="tns:IServiceCatalogosUsuario_GuardarGrupoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerGrupoUsuarioById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerGrupoUsuarioById" message="tns:IServiceCatalogosUsuario_ObtenerGrupoUsuarioById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerGrupoUsuarioByIdResponse" message="tns:IServiceCatalogosUsuario_ObtenerGrupoUsuarioById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubGrupoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubGrupoUsuario" message="tns:IServiceCatalogosUsuario_ObtenerSubGrupoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubGrupoUsuarioResponse" message="tns:IServiceCatalogosUsuario_ObtenerSubGrupoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel1" message="tns:IServiceCatalogosUsuario_ObtenerNivel1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel1Response" message="tns:IServiceCatalogosUsuario_ObtenerNivel1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel2" message="tns:IServiceCatalogosUsuario_ObtenerNivel2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel2Response" message="tns:IServiceCatalogosUsuario_ObtenerNivel2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel3">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel3" message="tns:IServiceCatalogosUsuario_ObtenerNivel3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel3Response" message="tns:IServiceCatalogosUsuario_ObtenerNivel3_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel4">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel4" message="tns:IServiceCatalogosUsuario_ObtenerNivel4_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel4Response" message="tns:IServiceCatalogosUsuario_ObtenerNivel4_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel5">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel5" message="tns:IServiceCatalogosUsuario_ObtenerNivel5_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel5Response" message="tns:IServiceCatalogosUsuario_ObtenerNivel5_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel6">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel6" message="tns:IServiceCatalogosUsuario_ObtenerNivel6_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel6Response" message="tns:IServiceCatalogosUsuario_ObtenerNivel6_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel7">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel7" message="tns:IServiceCatalogosUsuario_ObtenerNivel7_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel7Response" message="tns:IServiceCatalogosUsuario_ObtenerNivel7_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EsNodoTerminal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/EsNodoTerminal" message="tns:IServiceCatalogosUsuario_EsNodoTerminal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/EsNodoTerminalResponse" message="tns:IServiceCatalogosUsuario_EsNodoTerminal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArbol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarArbol" message="tns:IServiceCatalogosUsuario_GuardarArbol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarArbolResponse" message="tns:IServiceCatalogosUsuario_GuardarArbol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInformacionConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerInformacionConsulta" message="tns:IServiceCatalogosUsuario_ObtenerInformacionConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerInformacionConsultaResponse" message="tns:IServiceCatalogosUsuario_ObtenerInformacionConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarInformacionConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarInformacionConsulta" message="tns:IServiceCatalogosUsuario_GuardarInformacionConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarInformacionConsultaResponse" message="tns:IServiceCatalogosUsuario_GuardarInformacionConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSla" message="tns:IServiceCatalogosUsuario_ObtenerSla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSlaResponse" message="tns:IServiceCatalogosUsuario_ObtenerSla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarSla" message="tns:IServiceCatalogosUsuario_GuardarSla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarSlaResponse" message="tns:IServiceCatalogosUsuario_GuardarSla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEncuestas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerEncuestas" message="tns:IServiceCatalogosUsuario_ObtenerEncuestas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/ObtenerEncuestasResponse" message="tns:IServiceCatalogosUsuario_ObtenerEncuestas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarEncuesta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarEncuesta" message="tns:IServiceCatalogosUsuario_GuardarEncuesta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosUsuario/GuardarEncuestaResponse" message="tns:IServiceCatalogosUsuario_GuardarEncuesta_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointAdministracion" type="tns:IServiceCatalogosUsuario">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerTipoSubGrupos">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerTipoSubGrupos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerGruposUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerGruposUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubGruposUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubGruposUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPais">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerPais" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCampus">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerCampus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTorres">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerTorres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPisos">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerPisos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerZonas">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerZonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubZonas">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubZonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSiteRacks">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSiteRacks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerHoldings">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerHoldings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCompañias">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerCompañias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDirecciones">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerDirecciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubDirecciones">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubDirecciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerGerencias">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerGerencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubGerencias">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubGerencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerJefaturas">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerJefaturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarUbicacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarUbicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarOrganizacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarOrganizacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarHolding">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarHolding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCompania">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarCompania" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarDireccion">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarDireccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSubDireccion">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarSubDireccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarGerencia">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarGerencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSubGerencia">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarSubGerencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarJefatura">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarJefatura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarGrupoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarGrupoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerGrupoUsuarioById">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerGrupoUsuarioById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubGrupoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSubGrupoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel1">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel2">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel3">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel4">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel5">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel6">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel6" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNivel7">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerNivel7" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EsNodoTerminal">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/EsNodoTerminal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArbol">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarArbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInformacionConsulta">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerInformacionConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarInformacionConsulta">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarInformacionConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSla">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerSla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSla">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarSla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEncuestas">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/ObtenerEncuestas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarEncuesta">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosUsuario/GuardarEncuesta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceCatalogosUsuario">
+    <wsdl:port name="EndPointAdministracion" binding="tns:EndPointAdministracion">
+      <soap:address location="http://localhost:15277/ServiceCatalogosUsuario.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

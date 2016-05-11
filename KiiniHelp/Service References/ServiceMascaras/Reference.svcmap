@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8441cd6a-91f9-4741-9a58-032284a14042" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:15277/ServiceMascaras.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceMascaras4.xsd" MetadataType="Schema" ID="4d708a03-14c9-4f8c-99fb-d39dea4afaea" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd12" />
+    <MetadataFile FileName="ServiceMascaras1.xsd" MetadataType="Schema" ID="a96deeab-25f8-47a7-8644-8586e7b1c8b9" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceMascaras41.xsd" MetadataType="Schema" ID="9e6208e0-7b11-4b9f-b24f-2b5846e3e8e4" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd10" />
+    <MetadataFile FileName="ServiceMascaras42.xsd" MetadataType="Schema" ID="b5862429-6c27-49d8-808b-fa1fd36a672c" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd9" />
+    <MetadataFile FileName="ServiceMascaras43.xsd" MetadataType="Schema" ID="490c0e02-18d9-4fd5-9ab5-e5f4d13d2bcd" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd7" />
+    <MetadataFile FileName="ServiceMascaras44.xsd" MetadataType="Schema" ID="a7fd7b18-685e-4971-8a1a-8dd29a5ac7ac" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServiceMascaras2.xsd" MetadataType="Schema" ID="4b2f75fd-af4c-439b-b9f2-847b9437857e" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceMascaras.disco" MetadataType="Disco" ID="93bb2124-d33d-4edd-bc37-886df9f5679e" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?disco" />
+    <MetadataFile FileName="ServiceMascaras45.xsd" MetadataType="Schema" ID="1de0464a-65fe-4141-9ee0-3401ec83f7a2" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd11" />
+    <MetadataFile FileName="ServiceMascaras46.xsd" MetadataType="Schema" ID="64b71573-3628-44f6-885b-68867159fb80" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd8" />
+    <MetadataFile FileName="ServiceMascaras.xsd" MetadataType="Schema" ID="4f72e12a-4bf6-4944-aa28-59397b07f9fc" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceMascaras3.xsd" MetadataType="Schema" ID="a495cb02-bd1d-4581-819a-b3bc764e68bc" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceMascaras.wsdl" MetadataType="Wsdl" ID="42455e45-cf15-463e-9a0e-f9ff0d236ca5" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?wsdl" />
+    <MetadataFile FileName="ServiceMascaras47.xsd" MetadataType="Schema" ID="3355fce6-da55-418d-beb9-efe3681beccb" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServiceMascaras48.xsd" MetadataType="Schema" ID="103a4bbd-5d7a-403d-8db9-582e317056d0" SourceId="1" SourceUrl="http://localhost:15277/ServiceMascaras.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

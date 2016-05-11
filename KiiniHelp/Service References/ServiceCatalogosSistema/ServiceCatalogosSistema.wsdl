@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceCatalogosSistema" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Sistema" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Operacion" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Operacion.Usuarios" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Parametros" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones.Domicilio" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Operacion" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Mascaras" />
+      <xsd:import schemaLocation="http://localhost:15277/ServiceCatalogosSistema.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Nodos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposTelefono_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposTelefono" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposTelefono_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposTelefonoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerColoniasCp_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerColoniasCp" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerColoniasCp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerColoniasCpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRoles" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposGruposByRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposGruposByRol" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposGruposByRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposGruposByRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposGrupo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposGrupo" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposGrupo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTipoCampoMascara_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoCampoMascara" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTipoCampoMascara_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoCampoMascaraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_TipoCampoMascaraId_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoCampoMascaraId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_TipoCampoMascaraId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoCampoMascaraIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerCatalogosMascaraCaptura_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCatalogosMascaraCaptura" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerCatalogosMascaraCaptura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCatalogosMascaraCapturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposArbolAcceso_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposArbolAcceso" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposArbolAcceso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposArbolAccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTipoInformacionConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoInformacionConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTipoInformacionConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoInformacionConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTipoDocumentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTipoDocumentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposDocumentoId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposDocumentoId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposDocumentoId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposDocumentoIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposEncuesta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposEncuesta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_ObtenerTiposEncuesta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposEncuestaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_TipoEncuestaId_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoEncuestaId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogosSistema_TipoEncuestaId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoEncuestaIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceCatalogosSistema">
+    <wsdl:operation name="ObtenerTiposUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposUsuario" message="tns:IServiceCatalogosSistema_ObtenerTiposUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposUsuarioResponse" message="tns:IServiceCatalogosSistema_ObtenerTiposUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposTelefono">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposTelefono" message="tns:IServiceCatalogosSistema_ObtenerTiposTelefono_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposTelefonoResponse" message="tns:IServiceCatalogosSistema_ObtenerTiposTelefono_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerColoniasCp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerColoniasCp" message="tns:IServiceCatalogosSistema_ObtenerColoniasCp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerColoniasCpResponse" message="tns:IServiceCatalogosSistema_ObtenerColoniasCp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerRoles" message="tns:IServiceCatalogosSistema_ObtenerRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerRolesResponse" message="tns:IServiceCatalogosSistema_ObtenerRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposGruposByRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposGruposByRol" message="tns:IServiceCatalogosSistema_ObtenerTiposGruposByRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposGruposByRolResponse" message="tns:IServiceCatalogosSistema_ObtenerTiposGruposByRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposGrupo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposGrupo" message="tns:IServiceCatalogosSistema_ObtenerTiposGrupo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposGrupoResponse" message="tns:IServiceCatalogosSistema_ObtenerTiposGrupo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoCampoMascara">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTipoCampoMascara" message="tns:IServiceCatalogosSistema_ObtenerTipoCampoMascara_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTipoCampoMascaraResponse" message="tns:IServiceCatalogosSistema_ObtenerTipoCampoMascara_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoCampoMascaraId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/TipoCampoMascaraId" message="tns:IServiceCatalogosSistema_TipoCampoMascaraId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/TipoCampoMascaraIdResponse" message="tns:IServiceCatalogosSistema_TipoCampoMascaraId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCatalogosMascaraCaptura">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerCatalogosMascaraCaptura" message="tns:IServiceCatalogosSistema_ObtenerCatalogosMascaraCaptura_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerCatalogosMascaraCapturaResponse" message="tns:IServiceCatalogosSistema_ObtenerCatalogosMascaraCaptura_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposArbolAcceso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposArbolAcceso" message="tns:IServiceCatalogosSistema_ObtenerTiposArbolAcceso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposArbolAccesoResponse" message="tns:IServiceCatalogosSistema_ObtenerTiposArbolAcceso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoInformacionConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTipoInformacionConsulta" message="tns:IServiceCatalogosSistema_ObtenerTipoInformacionConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTipoInformacionConsultaResponse" message="tns:IServiceCatalogosSistema_ObtenerTipoInformacionConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoDocumentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTipoDocumentos" message="tns:IServiceCatalogosSistema_ObtenerTipoDocumentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTipoDocumentosResponse" message="tns:IServiceCatalogosSistema_ObtenerTipoDocumentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposDocumentoId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposDocumentoId" message="tns:IServiceCatalogosSistema_ObtenerTiposDocumentoId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposDocumentoIdResponse" message="tns:IServiceCatalogosSistema_ObtenerTiposDocumentoId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposEncuesta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposEncuesta" message="tns:IServiceCatalogosSistema_ObtenerTiposEncuesta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposEncuestaResponse" message="tns:IServiceCatalogosSistema_ObtenerTiposEncuesta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoEncuestaId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/TipoEncuestaId" message="tns:IServiceCatalogosSistema_TipoEncuestaId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogosSistema/TipoEncuestaIdResponse" message="tns:IServiceCatalogosSistema_TipoEncuestaId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointAdministracion" type="tns:IServiceCatalogosSistema">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerTiposUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposTelefono">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposTelefono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerColoniasCp">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerColoniasCp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRoles">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposGruposByRol">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposGruposByRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposGrupo">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoCampoMascara">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerTipoCampoMascara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoCampoMascaraId">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/TipoCampoMascaraId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCatalogosMascaraCaptura">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerCatalogosMascaraCaptura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposArbolAcceso">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposArbolAcceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoInformacionConsulta">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerTipoInformacionConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoDocumentos">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerTipoDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposDocumentoId">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposDocumentoId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposEncuesta">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/ObtenerTiposEncuesta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoEncuestaId">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogosSistema/TipoEncuestaId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceCatalogosSistema">
+    <wsdl:port name="EndPointAdministracion" binding="tns:EndPointAdministracion">
+      <soap:address location="http://localhost:15277/ServiceCatalogosSistema.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

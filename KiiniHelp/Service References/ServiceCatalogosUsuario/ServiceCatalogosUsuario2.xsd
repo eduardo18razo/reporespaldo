@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Sistema" />
+  <xs:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" />
+  <xs:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Helper" />
+  <xs:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones" />
+  <xs:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" />
+  <xs:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Operacion" />
+  <xs:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Nodos" />
+  <xs:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/KinniNet.Business.Utils" />
+  <xs:import schemaLocation="http://localhost:15277/ServiceCatalogosUsuario.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Operacion" />
+  <xs:element name="ObtenerTipoSubGrupos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoGrupo" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTipoSubGruposResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Sistema" minOccurs="0" name="ObtenerTipoSubGruposResult" nillable="true" type="q1:ArrayOfTipoSubGrupo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerGruposUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoGrupo" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerGruposUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" minOccurs="0" name="ObtenerGruposUsuarioResult" nillable="true" type="q2:ArrayOfGrupoUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubGruposUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idGrupoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubGruposUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Helper" minOccurs="0" name="ObtenerSubGruposUsuarioResult" nillable="true" type="q3:ArrayOfHelperSubGurpoUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerPais">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerPaisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones" minOccurs="0" name="ObtenerPaisResult" nillable="true" type="q4:ArrayOfPais" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCampus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idPais" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCampusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones" minOccurs="0" name="ObtenerCampusResult" nillable="true" type="q5:ArrayOfCampus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTorres">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idCampus" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTorresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones" minOccurs="0" name="ObtenerTorresResult" nillable="true" type="q6:ArrayOfTorre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerPisos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idTorre" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerPisosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones" minOccurs="0" name="ObtenerPisosResult" nillable="true" type="q7:ArrayOfPiso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerZonas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idPiso" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerZonasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones" minOccurs="0" name="ObtenerZonasResult" nillable="true" type="q8:ArrayOfZona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubZonas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idZona" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubZonasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones" minOccurs="0" name="ObtenerSubZonasResult" nillable="true" type="q9:ArrayOfSubZona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSiteRacks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idSubZona" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSiteRacksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Ubicaciones" minOccurs="0" name="ObtenerSiteRacksResult" nillable="true" type="q10:ArrayOfSiteRack" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerHoldings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerHoldingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="ObtenerHoldingsResult" nillable="true" type="q11:ArrayOfHolding" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCompañias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idHolding" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCompañiasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="ObtenerCompañiasResult" nillable="true" type="q12:ArrayOfCompania" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDirecciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idCompañia" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDireccionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="ObtenerDireccionesResult" nillable="true" type="q13:ArrayOfDireccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubDirecciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idDireccoin" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubDireccionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="ObtenerSubDireccionesResult" nillable="true" type="q14:ArrayOfSubDireccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerGerencias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idSubdireccion" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerGerenciasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="ObtenerGerenciasResult" nillable="true" type="q15:ArrayOfGerencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubGerencias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idGerencia" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubGerenciasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="ObtenerSubGerenciasResult" nillable="true" type="q16:ArrayOfSubGerencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerJefaturas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idSubGerencia" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerJefaturasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="ObtenerJefaturasResult" nillable="true" type="q17:ArrayOfJefatura" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarUbicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Operacion" minOccurs="0" name="ubicacion" nillable="true" type="q18:Ubicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarUbicacionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarOrganizacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Operacion" minOccurs="0" name="organizacion" nillable="true" type="q19:Organizacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarOrganizacionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarHolding">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="entidad" nillable="true" type="q20:Holding" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarHoldingResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarCompania">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="entidad" nillable="true" type="q21:Compania" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarCompaniaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarDireccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="entidad" nillable="true" type="q22:Direccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarDireccionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarSubDireccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="entidad" nillable="true" type="q23:SubDireccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarSubDireccionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarGerencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="entidad" nillable="true" type="q24:Gerencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarGerenciaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarSubGerencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="entidad" nillable="true" type="q25:SubGerencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarSubGerenciaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarJefatura">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Organizacion" minOccurs="0" name="entidad" nillable="true" type="q26:Jefatura" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarJefaturaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarGrupoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" minOccurs="0" name="grupoUsuario" nillable="true" type="q27:GrupoUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarGrupoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerGrupoUsuarioById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idGrupoUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerGrupoUsuarioByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" minOccurs="0" name="ObtenerGrupoUsuarioByIdResult" nillable="true" type="q28:GrupoUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubGrupoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idGrupoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoSubGrupo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubGrupoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" minOccurs="0" name="ObtenerSubGrupoUsuarioResult" nillable="true" type="q29:SubGrupoUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoArbol" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Nodos" minOccurs="0" name="ObtenerNivel1Result" nillable="true" type="q30:ArrayOfNivel1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoArbol" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idNivel1" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Nodos" minOccurs="0" name="ObtenerNivel2Result" nillable="true" type="q31:ArrayOfNivel2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoArbol" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idNivel2" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Nodos" minOccurs="0" name="ObtenerNivel3Result" nillable="true" type="q32:ArrayOfNivel3" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel4">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoArbol" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idNivel3" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel4Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Nodos" minOccurs="0" name="ObtenerNivel4Result" nillable="true" type="q33:ArrayOfNivel4" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel5">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoArbol" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idNivel4" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel5Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Nodos" minOccurs="0" name="ObtenerNivel5Result" nillable="true" type="q34:ArrayOfNivel5" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel6">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoArbol" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idNivel5" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel6Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Nodos" minOccurs="0" name="ObtenerNivel6Result" nillable="true" type="q35:ArrayOfNivel6" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel7">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoArbol" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idNivel6" type="xs:int" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNivel7Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Arbol.Nodos" minOccurs="0" name="ObtenerNivel7Result" nillable="true" type="q36:ArrayOfNivel7" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EsNodoTerminal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoArbol" type="xs:int" />
+        <xs:element minOccurs="0" name="nivel1" type="xs:int" />
+        <xs:element minOccurs="0" name="nivel2" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="nivel3" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="nivel4" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="nivel5" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="nivel6" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="nivel7" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EsNodoTerminalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EsNodoTerminalResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarArbol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Operacion" minOccurs="0" name="arbol" nillable="true" type="q37:ArbolAcceso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarArbolResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerInformacionConsulta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/KinniNet.Business.Utils" minOccurs="0" name="tipoinfoConsulta" type="q38:BusinessVariables.EnumTiposInformacionConsulta" />
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerInformacionConsultaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Operacion" minOccurs="0" name="ObtenerInformacionConsultaResult" nillable="true" type="q39:ArrayOfInformacionConsulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarInformacionConsulta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Operacion" minOccurs="0" name="informacion" nillable="true" type="q40:InformacionConsulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarInformacionConsultaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSla">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSlaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" minOccurs="0" name="ObtenerSlaResult" nillable="true" type="q41:ArrayOfSLA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarSla">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" minOccurs="0" name="sla" nillable="true" type="q42:SLA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarSlaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEncuestas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertarSeleccion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEncuestasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" minOccurs="0" name="ObtenerEncuestasResult" nillable="true" type="q43:ArrayOfEncuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarEncuesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/KiiniNet.Entities.Cat.Usuario" minOccurs="0" name="encuesta" nillable="true" type="q44:Encuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarEncuestaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
